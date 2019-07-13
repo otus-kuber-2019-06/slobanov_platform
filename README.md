@@ -2,11 +2,11 @@
 
 slobanov Platform repository
 
-* [kubernetes-into](kubernetes-into)
+* kubernetes-into
   * `web/` - sources (`Dockerfile` and `nginx.conf`) for docker image of nginx, serving static content from `/app` on `8000` port. Builded image can be pulled from [Docker Hub](https://cloud.docker.com/):
   
   ```bash
-    $ docker push slobanov/kubernetes-intro:1.0.0
+    $ docker pull slobanov/kubernetes-intro:1.0.0
   ```
 
   * `web-pod.yaml` - k8s manifest, describing Pod running `slobanov/kubernetes-intro:1.0.0`, bootstaped by init container which generates sample `index.html`.
