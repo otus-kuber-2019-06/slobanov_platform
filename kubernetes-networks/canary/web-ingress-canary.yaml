@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: web-new
+  annotations:
+    nginx.ingress.kubernetes.io/canary: "true"
+    nginx.ingress.kubernetes.io/canary-by-header: "web-new"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /web
+        backend: 
+          serviceName: web-new-svc
+          servicePort: 8000

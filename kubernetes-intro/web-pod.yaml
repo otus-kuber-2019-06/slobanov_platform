@@ -14,6 +14,13 @@ spec:
     volumeMounts:
     - mountPath: /app
       name: app
+    readinessProbe:
+      httpGet:
+        path: /index.html
+        port: 8000
+    livenessProbe:
+      tcpSocket:
+        port: 8000
   initContainers:
   - name: init-web
     image: "busybox:1.31.0"

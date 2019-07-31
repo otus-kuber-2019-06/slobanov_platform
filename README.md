@@ -27,6 +27,18 @@ slobanov Platform repository
     * `03-jane-to-admin-binding.yaml` - привязка роли `admin` к `jane` в рамках `Namespace`'а `dev`.
     * `04-ken-account.yaml` -  создание `ServiceAccount` `ken` в `Namespace`'е `dev`.
     * `05-ken-to-view-binding.yaml` - привязка роли `view` к `ken` в рамках `Namespace`'а `dev`.
+* kubernetes-networks
+  * `coredns-svc-tcp-lb.yaml` - `LoadBalancer` `Service`, exposing `kute-system`'s `core-dns` `Pods` on TCP:53 for usage outside of the cluster.
+  * `coredns-svc-udp-lb.yaml` - `LoadBalancer` `Service`, exposing `kute-system`'s `core-dns` `Pods` on UDP:53 for usage outside of the cluster.
+  * `dashboard-ingress.yaml` - `Ingress` for routing trafic to kubernetes-dashboard `Service`.
+  * `metallb-config.yaml` - `ConfigMap`, used for `Metallb` configuration.
+  * `nginx-lb.yaml` - `LoadBalancer` `Service`, exposing NGINX Ingress controller.
+  * `web-deploy.yaml` - `Deployment` for `web` application, described in kubernetes-into section.
+  * `web-ingress.yaml` - `Ingress` for accessing `web-svc` `Service`.
+  * `web-svc-cip.yaml` - `ClusterIP` `Service` for `web` application `Pods`.
+  * `web-svc-headless-yaml` - headless `Service` for `web` application `Pods`.
+  * `web-svc-lb.yaml` - `LoadBalancer` `Service` for `web` application `Pods`.
+  * `canary/` - `Deployment`, `Service` and `Ingress` for canary deployment pattern.
 
 -----
 Sergey Lobanov
