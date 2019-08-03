@@ -39,6 +39,10 @@ slobanov Platform repository
   * `web-svc-headless-yaml` - headless `Service` for `web` application `Pods`.
   * `web-svc-lb.yaml` - `LoadBalancer` `Service` for `web` application `Pods`.
   * `canary/` - `Deployment`, `Service` and `Ingress` for canary deployment pattern.
+* kubernetes-volumes
+  * minio-sercret.yaml - `Sercret`, storing accessKey and secretKey for minio application in base64.
+  * minio-statefulset.yaml - `StatefulSet` for running minio.
+  * minio-headless-service.yaml - headless `Service` for minio `Pods`.
 
 -----
 Sergey Lobanov
