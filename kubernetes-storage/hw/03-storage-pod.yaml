@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: storage-pod
+spec:
+  containers:
+  - name: storage-container
+    image: ubuntu:18.04
+    command: ["/bin/bash", "-ec", "while true; do sleep 10; done;"]
+    volumeMounts:
+    - mountPath: /data
+      name: storage-volume
+  volumes:
+  - name: storage-volume
+    persistentVolumeClaim:
+      claimName: storage-pvc

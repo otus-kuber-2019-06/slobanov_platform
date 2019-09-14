@@ -43,6 +43,11 @@ slobanov Platform repository
   * minio-sercret.yaml - `Sercret`, storing accessKey and secretKey for minio application in base64.
   * minio-statefulset.yaml - `StatefulSet` for running minio.
   * minio-headless-service.yaml - headless `Service` for minio `Pods`.
+* kubernetes-storage
+  * cluster/cluster.yaml - cluster config for kind for VolumeSnapshotDataSource support.
+  * hw/01-storage-class.yaml - `StorageClass`, describing CSI hostpath provisioner.
+  * hw/02-storage-pvc.yaml - `PersistentVolumeClaim` for binding with hostpath `PVs`, provided by `csi-hostpath-sc`.
+  * hw/03-storage-pod.yaml - `Pod` with volume, mouted to `/data`, claimed from storage-pvc.
 
 -----
 Sergey Lobanov
